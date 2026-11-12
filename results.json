@@ -1,0 +1,85 @@
+{
+  "rule_mode": "cwa",
+  "datasets": {
+    "ruletaker": {
+      "n": 1625,
+      "n_samples": 1625,
+      "accuracy": 98.46153846153847,
+      "time_sec": 0.7292989000002308,
+      "avg_time_per_sample_sec": 0.0004487993230770651,
+      "per_config": {
+        "depth-2": 96.4,
+        "depth-3": 99.0,
+        "depth-1": 100.0,
+        "depth-4": 100.0,
+        "depth-5": 98.4
+      },
+      "per_split": {
+        "train": {
+          "n": 1000,
+          "accuracy": 98.3
+        },
+        "test": {
+          "n": 250,
+          "accuracy": 97.6
+        },
+        "ood_test": {
+          "n": 375,
+          "accuracy": 99.46666666666667
+        }
+      }
+    },
+    "folio": {
+      "n": 1204,
+      "n_samples": 1204,
+      "accuracy": 81.14617940199335,
+      "time_sec": 135.58966520000013,
+      "avg_time_per_sample_sec": 0.11261600099667785,
+      "per_config": {
+        "None": 81.14617940199335
+      },
+      "per_split": {
+        "train": {
+          "n": 1001,
+          "accuracy": 80.51948051948052
+        },
+        "validation": {
+          "n": 203,
+          "accuracy": 84.23645320197045
+        }
+      }
+    },
+    "counterbench": {
+      "n": 1200,
+      "n_samples": 1200,
+      "accuracy": 90.41666666666667,
+      "time_sec": 0.22877870000002076,
+      "avg_time_per_sample_sec": 0.00019064891666668396,
+      "per_config": {
+        "basic": 92.0,
+        "conditional": 90.0,
+        "joint": 90.0,
+        "nested": 92.0,
+        "backdoor": 87.5
+      },
+      "per_split": {
+        "data_balanced_alpha_V1.json": {
+          "n": 1000,
+          "accuracy": 91.0
+        },
+        "data_balanced_backdoor_V2.json": {
+          "n": 200,
+          "accuracy": 87.5
+        }
+      }
+    }
+  },
+  "overall_accuracy": 90.89103996028791,
+  "total_inference_time_sec": 136.54774280000038,
+  "overall_inference_time_sec": 0.03775181641214053,
+  "ruletaker_rule_parser": {
+    "rule_sentences": 26180,
+    "unparsed": 0,
+    "examples": []
+  }
+}

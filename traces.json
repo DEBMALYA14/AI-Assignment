@@ -1,0 +1,114 @@
+[
+  {
+    "dataset": "ruletaker",
+    "context": "Facts:\nThe wall dances gracefully.\nThe river dances gracefully.\nThe river becomes famous.\nRules:\nAssuming the river dances gracefully, we can say the river is fast.\nIf the wall dances gracefully, then the wall dances gracefully.\nBased on the river becomes famous, it is evident that the wall dances gracefully.\nAssuming the river becomes famous, we can say the river becomes famous.\nAssuming the sandwich dances gracefully, we can say the river is fast.\nGiven that the river is fast, it follows that the river is fast.",
+    "statement": "The sandwich dances gracefully.",
+    "gold": false,
+    "pred": false,
+    "trace": [
+      "sandwich dance gracefully: not derivable (closed world)"
+    ]
+  },
+  {
+    "dataset": "ruletaker",
+    "context": "Facts:\nCharlie is fast.\nStanford University is a chef.\nThe river is fast.\nRules:\nBased on charlie is fast, it is evident that stanford university volunteers.\nBased on the river is fast, it is evident that the house volunteers.\nBased on the river is fast, it is evident that the house volunteers.\nAssuming charlie is fast, we can say stanford university hosts parties.\nAssuming stanford university hosts parties, we can say the house volunteers.\nBased on charlie is a chef, it is evident that stanford university volunteers.\nGiven that the house volunteers, it follows that charlie is a chef.\nAssuming",
+    "statement": "The river volunteers.",
+    "gold": false,
+    "pred": false,
+    "trace": [
+      "river volunteer: not derivable (closed world)"
+    ]
+  },
+  {
+    "dataset": "ruletaker",
+    "context": "Facts:\nThe globe is colorful.\nThe globe is friendly.\nThe globe is colorful.\nRules:\nGiven that the globe is colorful, it follows that mike is colorful.\nIf the globe is friendly, then the dog runs marathons.\nGiven that the city writes stories, it follows that mike is colorful.\nGiven that the dog runs marathons, it follows that mike runs marathons.\nWhen mike runs marathons, we can conclude the globe writes stories.\nGiven that the city writes stories, it follows that the dog runs marathons.",
+    "statement": "Mike is colorful.",
+    "gold": true,
+    "pred": true,
+    "trace": [
+      "mike be colorful  <= globe be colorful",
+      "  globe be colorful  [fact]"
+    ]
+  },
+  {
+    "dataset": "folio",
+    "context": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+    "statement": "Rina doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+    "gold": true,
+    "pred": true,
+    "trace": {
+      "status": "proved",
+      "steps": "9"
+    }
+  },
+  {
+    "dataset": "folio",
+    "context": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+    "statement": "Rina eith doesn't want to be addicted to caffeine or is unaware that caffeine is a drug.",
+    "gold": true,
+    "pred": false,
+    "trace": {
+      "status": "saturated",
+      "steps": "132"
+    }
+  },
+  {
+    "dataset": "folio",
+    "context": "All people who regularly drink coffee are dependent on caffeine.\nPeople regularly drink coffee, or they don't want to be addicted to caffeine, or both.\nNo one who doesn't want to be addicted to caffeine is unaware that caffeine is a drug.\nRina is either a student who is unaware that caffeine is a drug, or she is not a student and is she aware that caffeine is a drug.\nRina  is either a student who is dependent on caffeine, or she is not a student and not dependent on caffeine.",
+    "statement": "Rina either regularly drinks coffee or is unaware that caffeine is a drug.",
+    "gold": false,
+    "pred": false,
+    "trace": {
+      "status": "saturated",
+      "steps": "84"
+    }
+  },
+  {
+    "dataset": "counterbench",
+    "context": "We know that Ziklo causes Blaf, Blaf causes Trune, Trune causes Vork, and Vork causes Lumbo.",
+    "statement": "Would Lumbo occur if not Ziklo instead of Ziklo?",
+    "gold": false,
+    "pred": false,
+    "trace": {
+      "target": "lumbo",
+      "do": "{'ziklo': False}",
+      "factual": "{'ziklo': True}",
+      "world": "{'ziklo': True}",
+      "equations": "{'blaf': [('var', 'ziklo')], 'trune': [('var', 'blaf')], 'vork': [('var', 'trune')], 'lumbo': [('var', 'vork')]}",
+      "observations": "{}",
+      "unparsed": "[]"
+    }
+  },
+  {
+    "dataset": "counterbench",
+    "context": "We know that Glent causes Razz, Razz causes Pex, Pex causes Zurn, and Zurn causes Zlim.",
+    "statement": "Would Zlim occur if not Glent instead of Glent?",
+    "gold": false,
+    "pred": false,
+    "trace": {
+      "target": "zlim",
+      "do": "{'glent': False}",
+      "factual": "{'glent': True}",
+      "world": "{'glent': True}",
+      "equations": "{'razz': [('var', 'glent')], 'pex': [('var', 'razz')], 'zurn': [('var', 'pex')], 'zlim': [('var', 'zurn')]}",
+      "observations": "{}",
+      "unparsed": "[]"
+    }
+  },
+  {
+    "dataset": "counterbench",
+    "context": "We know that Praf causes Vank, Vank causes Scud, Scud causes Wrenk, and Wrenk causes Klep.",
+    "statement": "Would Klep occur if not Praf instead of Praf?",
+    "gold": false,
+    "pred": false,
+    "trace": {
+      "target": "klep",
+      "do": "{'praf': False}",
+      "factual": "{'praf': True}",
+      "world": "{'praf': True}",
+      "equations": "{'vank': [('var', 'praf')], 'scud': [('var', 'vank')], 'wrenk': [('var', 'scud')], 'klep': [('var', 'wrenk')]}",
+      "observations": "{}",
+      "unparsed": "[]"
+    }
+  }
+]
